@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutorial_girebase_flutter/services/auth.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -6,6 +7,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +24,12 @@ class _SignInState extends State<SignIn> {
           child: RaisedButton(
             child: Text('Sign in Anom'),
             onPressed: ()async{
-              
+              dynamic result = await _auth.signInAnom();
+              if(result == null){
+                print('error signing in');
+              }else{
+                print('signed in $result');
+              }
             },
           ),
         )
