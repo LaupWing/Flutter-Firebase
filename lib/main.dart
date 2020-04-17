@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial_girebase_flutter/screens/auth/auth.dart';
-import 'package:tutorial_girebase_flutter/screens/wrapper.dart';
 
 void main() => runApp(MyApp());
 
